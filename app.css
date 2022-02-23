@@ -1,0 +1,63 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* reset body margin */
+body {
+  margin: 0;
+}
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  padding: 20px;
+  font-family: "Tahoma";
+  font-weight: 700;
+  font-size: 37px;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.game-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameboard {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-rows: repeat(6, 1fr);
+  margin: 0 auto;
+  width: 250px;
+}
+
+.game-row {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.tile {
+  display: inline-flex;
+  font-weight: bold;
+  border: solid 1px black;
+  height: 50px;
+}
