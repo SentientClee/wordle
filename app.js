@@ -24,7 +24,7 @@ function App() {
 }
 
 function Header() {
-  return <div className="header">Wordleneed</div>;
+  return <div className="header">Needle</div>;
 }
 
 function Game() {
