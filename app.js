@@ -69,7 +69,7 @@ function Game() {
         return;
       }
 
-      if (!words.includes(letters[currAttempt])) {
+      if (!wordList.includes(letters[currAttempt])) {
         setMessage("Not in word list");
         return;
       }
