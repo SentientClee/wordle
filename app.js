@@ -69,7 +69,7 @@ function Game() {
         return;
       }
 
-      if (!wordList.includes(letters[currAttempt])) {
+      if (!wordList.concat(words).includes(letters[currAttempt])) {
         setMessage("Not in word list");
         return;
       }
@@ -110,14 +110,15 @@ function Game() {
         console.log(newEvaluations);
         setEvaluations(newEvaluations);
 
-        // increment currAttempt
-        setCurrAttempt(currAttempt + 1);
-
         // check if currAttempts are at max then reveal word and end game
-        if (currAttempt === 6) {
+        if (currAttempt === 5) {
           setMessage(WORD);
           setGameOver(true);
+          return;
         }
+
+        // increment currAttempt
+        setCurrAttempt(currAttempt + 1);
       }
     }
 
