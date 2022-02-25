@@ -10,6 +10,7 @@ html {
 /* reset body margin */
 body {
   margin: 0;
+  font-family: "Tahoma";
 }
 
 .app-container {
@@ -22,7 +23,6 @@ body {
 
 .header {
   padding: 20px;
-  font-family: "Tahoma";
   font-weight: 700;
   font-size: 37px;
   line-height: 100%;
