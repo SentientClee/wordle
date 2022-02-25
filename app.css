@@ -3,7 +3,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -11,6 +13,7 @@ html {
 body {
   margin: 0;
   font-family: "Tahoma";
+  background-color: #121213;
 }
 
 .app-container {
@@ -22,6 +25,9 @@ body {
 }
 
 .header {
+  color: white;
+  width: 100%;
+  border-bottom: solid 1px #3a3a3c;
   padding: 20px;
   font-weight: 700;
   font-size: 37px;
@@ -39,6 +45,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 .gameboard {
@@ -46,7 +53,8 @@ body {
   grid-gap: 5px;
   grid-template-rows: repeat(6, 1fr);
   margin: 0 auto;
-  width: 250px;
+  width: 350px;
+  height: 420px;
 }
 
 .game-row {
@@ -56,8 +64,48 @@ body {
 }
 
 .tile {
+  width: 100%;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 2rem;
   font-weight: bold;
-  border: solid 1px black;
-  height: 50px;
+  text-transform: uppercase;
+  user-select: none;
+  color: white;
+}
+
+.tile[data-state="empty"] {
+  border: solid 2px #3a3a3c;
+}
+
+.tile[data-state="tbd"] {
+  border: solid 2px #565758;
+  background-color: #121213;
+}
+
+.tile[data-state="absent"] {
+  border: none;
+  background-color: #3a3a3c;
+}
+
+.tile[data-state="present"] {
+  border: none;
+  background-color: #b59f3b;
+}
+
+.tile[data-state="correct"] {
+  border: none;
+  background-color: #538d4e;
+}
+
+.message {
+  position: absolute;
+  top: 200px;
+  background-color: white;
+  color: #3a3a3c;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
 }
